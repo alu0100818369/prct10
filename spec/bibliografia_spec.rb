@@ -57,4 +57,9 @@ describe Bibliog do
              @b1.get_titulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide")
         end
     end
+    describe "# metodo para obtener la serie" do
+        it "Debe existir un metodo para obtener la serie" do
+             @b1.get_serie.should eq("The Facets of Ruby")
+        end
+    end
 end
