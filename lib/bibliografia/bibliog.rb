@@ -29,4 +29,8 @@ class Bibliog
     def get_serie
         "#{@serie}"
     end
+    
+    def get_editorial
+        "#{@editorial}"
+    end
 end
