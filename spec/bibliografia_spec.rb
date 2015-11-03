@@ -3,8 +3,8 @@ require 'bibliografia/bibliog'
 
 describe Bibliog do
     before :all do
-        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt',' Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf','The Facets of Ruby')
-        @b2 = Bibliog.new(['Dave Thomas','Andy Hunt',' Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf')
+        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt',' Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'The Facets of Ruby')
+        @b2 = Bibliog.new(['Dave Thomas','Andy Hunt',' Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4)
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
@@ -27,6 +27,11 @@ describe Bibliog do
     describe "# almacenamiento de editorial" do
         it "Debe existir una editorial" do
              @b1.editorial.should eq('Pragmatic Bookshelf')
+        end
+    end
+    describe "# almacenamiento de edicion" do
+        it "Debe existir un numero de edicion" do
+             @b1.edicion.should eq(4)
         end
     end
 end
