@@ -33,4 +33,8 @@ class Bibliog
     def get_editorial
         "#{@editorial}"
     end
+    
+    def get_edicion
+        "#{@edicion}"
+    end
 end
