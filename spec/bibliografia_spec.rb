@@ -21,7 +21,7 @@ describe Bibliog do
              @b1.serie.should eq('The Facets of Ruby')
         end
         it "No debe existir una serie" do
-             @b1.serie.should eq('none')
+             @b2.serie.should eq('none')
         end
     end
 end
