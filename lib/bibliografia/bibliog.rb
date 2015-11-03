@@ -68,4 +68,12 @@ class Bibliog
         end
         cadena
     end
+    
+    def to_s
+        cadena = "#{get_autores}.\n"
+        cadena = "#{cadena}"+"#{get_titulo}\n"
+        cadena = "#{cadena}"+"(#{get_serie})\n"
+        cadena = "#{cadena}"+"#{get_editorial}; #{get_edicion} edition (#{get_fecha})\n"
+        cadena = "#{cadena}"+"#{get_isbn}"
+    end
 end
