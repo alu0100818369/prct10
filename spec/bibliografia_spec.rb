@@ -77,4 +77,9 @@ describe Bibliog do
              @b1.get_fecha.should eq("July 7, 2013")
         end
     end
+    describe "# metodo para obtener los ISBN" do
+        it "Debe existir un metodo para obtener los ISBN" do
+             @b1.get_isbn.should eq("ISBN-13: 978-1937785499\nISBN-10: 1937785491")
+        end
+    end
 end
