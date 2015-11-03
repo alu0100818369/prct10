@@ -47,4 +47,9 @@ describe Bibliog do
              @b1.isbn.should eq([9781937785499, 1937785491])
         end
     end
+    describe "# metodo para obtener los autores" do
+        it "Debe existir un metodo para obtener la lista de autores" do
+             @b1.get_autores.should eq("Dave Thomas, Andy Hunt, Chad Fowler")
+        end
+    end
 end
