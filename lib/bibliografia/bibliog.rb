@@ -41,4 +41,31 @@ class Bibliog
     def get_fecha
         "#{@mes}, #{@anno}"
     end
+    
+    def get_isbn
+        size = @isbn.length
+        
+        a = @isbn[0].length
+        
+        cadena = "ISBN-#{a}: "
+        if a > 10
+            cadena = "#{cadena}"+"#{@isbn[0][-a..-11]}"+"-"+"#{@isbn[0][-10..-1]}"
+        else
+            cadena = "#{cadena}"+"#{@isbn[0]}"
+        end
+        
+        i = 1
+        while i < size
+            a = @isbn[i].length
+            
+            cadena = "#{cadena}"+"\nISBN-#{a}: "
+            if a > 10
+                cadena = "#{cadena}"+"#{@isbn[i][-a..-11]}"+"-"+"#{@isbn[i][-10..-1]}"
+            else
+                cadena = "#{cadena}"+"#{@isbn[i]}"
+            end
+            i = i+1
+        end
+        cadena
+    end
 end
