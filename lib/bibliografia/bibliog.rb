@@ -25,4 +25,8 @@ class Bibliog
     def get_titulo
         "#{@titulo}"
     end
+    
+    def get_serie
+        "#{@serie}"
+    end
 end
