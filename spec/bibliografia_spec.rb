@@ -52,4 +52,9 @@ describe Bibliog do
              @b1.get_autores.should eq("Dave Thomas, Andy Hunt, Chad Fowler")
         end
     end
+    describe "# metodo para obtener el titulo" do
+        it "Debe existir un metodo para obtener el titulo" do
+             @b1.get_titulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide")
+        end
+    end
 end
