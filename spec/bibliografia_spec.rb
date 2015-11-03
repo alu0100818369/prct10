@@ -62,4 +62,9 @@ describe Bibliog do
              @b1.get_serie.should eq("The Facets of Ruby")
         end
     end
+    describe "# metodo para obtener la editorial" do
+        it "Debe existir un metodo para obtener la editorial" do
+             @b1.get_editorial.should eq("Pragmatic Bookshelf")
+        end
+    end
 end
