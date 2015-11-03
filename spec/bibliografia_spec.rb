@@ -67,4 +67,9 @@ describe Bibliog do
              @b1.get_editorial.should eq("Pragmatic Bookshelf")
         end
     end
+    describe "# metodo para obtener el numero de edicion" do
+        it "Debe existir un metodo para obtener el numero de edicion" do
+             @b1.get_edicion.should eq("4")
+        end
+    end
 end
