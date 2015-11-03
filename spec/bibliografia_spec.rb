@@ -82,4 +82,9 @@ describe Bibliog do
              @b1.get_isbn.should eq("ISBN-13: 978-1937785499\nISBN-10: 1937785491")
         end
     end
+    describe "# formateo de la referencia" do
+        it "Debe existir un metodo que formatee la referencia" do
+            @b1.to_s.should eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
+        end
+    end
 end
