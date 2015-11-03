@@ -22,4 +22,7 @@ class Bibliog
         cadena = "#{cadena}"+"#{@autores[i]}"
     end
     
+    def get_titulo
+        "#{@titulo}"
+    end
 end
