@@ -3,12 +3,12 @@ require 'bibliografia/bibliog'
 
 describe Bibliog do
     before :all do
-        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt',' Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, [9781937785499, 1937785491], 'The Facets of Ruby')
-        @b2 = Bibliog.new(['Dave Thomas','Andy Hunt',' Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, [9781937785499, 1937785491])
+        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, [9781937785499, 1937785491], 'The Facets of Ruby')
+        @b2 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, [9781937785499, 1937785491])
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
-             @b1.autores.should eq(['Dave Thomas', 'Andy Hunt',' Chad Fowler'])
+             @b1.autores.should eq(['Dave Thomas', 'Andy Hunt','Chad Fowler'])
         end
     end
     describe "# almacenamiento de titulo" do

@@ -12,4 +12,14 @@ class Bibliog
         @isbn = isbn
     end
     
+    def get_autores
+        size = @autores.length
+        i = 0
+        while i < (size-1)
+            cadena = "#{cadena}"+"#{@autores[i]}, "
+            i = i+1
+        end
+        cadena = "#{cadena}"+"#{@autores[i]}"
+    end
+    
 end
