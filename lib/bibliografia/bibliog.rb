@@ -1,8 +1,9 @@
 class Bibliog
-    attr_reader :autores 
+    attr_reader :autores, :titulo
     
-    def initialize(a)
+    def initialize(a, t)
         @autores = a
+        @titulo = t
     end
     
 end
