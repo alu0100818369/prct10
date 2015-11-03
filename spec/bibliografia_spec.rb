@@ -72,4 +72,9 @@ describe Bibliog do
              @b1.get_edicion.should eq("4")
         end
     end
+    describe "# metodo para obtener la fecha" do
+        it "Debe existir unmetodo para obtener la fecha" do
+             @b1.get_fecha.should eq("July 7, 2013")
+        end
+    end
 end
