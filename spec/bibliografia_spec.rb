@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'bibliografia/bibliografia'
+require 'bibliografia/bibliog'
 
-describe Bibliografia do
-    it 'requires additional testing'
+describe Bibliog do
+    #it 'requires additional testing'
 end
