@@ -37,4 +37,8 @@ class Bibliog
     def get_edicion
         "#{@edicion}"
     end
+    
+    def get_fecha
+        "#{@mes}, #{@anno}"
+    end
 end
