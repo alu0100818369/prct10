@@ -104,3 +104,7 @@ describe Nodo do
     end
         
 end
+
+describe Lista do
+    
+end
