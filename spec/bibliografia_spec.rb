@@ -106,5 +106,12 @@ describe Nodo do
 end
 
 describe Lista do
-    
+    before :all do
+        @l = Lista.new
+    end
+    describe "Pruebas de la lista" do
+        it "En la lista vacia la cabeza debe ser nil" do
+            @l.cabeza.should eq(nil)
+        end
+    end
 end
