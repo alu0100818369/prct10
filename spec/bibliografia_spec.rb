@@ -118,9 +118,15 @@ describe Lista do
         end
         it "Insertar un valor" do
             aux = 5
-            @l.insertar(5)
+            @l.insertar(aux)
             @l.actual.value.should eq(5)
             @l.actual.next.should eq(nil)
+        end
+        it "Eliminar un valor" do
+            aux = 7
+            @l.insertar(aux)
+            @l.eliminar
+            @l.actual.value.should eq(7)
         end
     end
 end
