@@ -113,5 +113,8 @@ describe Lista do
         it "En la lista vacia la cabeza debe ser nil" do
             @l.cabeza.should eq(nil)
         end
+        it "En la lista vacia actual debe ser nil" do
+            @l.actual.should eq(nil)
+        end
     end
 end
