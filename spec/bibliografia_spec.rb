@@ -92,11 +92,14 @@ end
 
 describe Nodo do
     before :all do
-        @n = Nodo.new('a')
+        @n = Nodo.new('a','b')
     end
     describe "Variables del nodo" do
         it "Debe existir un valor" do
             @n.value.should eq ('a')
+        end
+        it "Debe existir un siguiente" do
+            @n.value.should eq ('b')
         end
     end
         
