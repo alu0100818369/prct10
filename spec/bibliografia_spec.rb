@@ -91,5 +91,13 @@ describe Bibliog do
 end
 
 describe Nodo do
-
+    before :all do
+        @n = Nodo.new('a')
+    end
+    describe "Variables del nodo" do
+        it "Debe existir un valor" do
+            @n.value.should eq ('a')
+        end
+    end
+        
 end
