@@ -129,5 +129,10 @@ describe Lista do
             @l.eliminar
             @l.actual.value.should eq(7)
         end
+        it "Extraer primer elemento" do
+            aux = 9
+            @l.insertar(aux)
+            @l.pop.shoul eq(7)
+        end
     end
 end
