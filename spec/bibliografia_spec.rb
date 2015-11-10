@@ -89,3 +89,7 @@ describe Bibliog do
         end
     end
 end
+
+describe Nodo do
+
+end
