@@ -1,3 +1,4 @@
+require_relative 'bibliog'
 Nodo = Struct.new(:value, :next)
 
 class Lista
@@ -7,14 +8,14 @@ class Lista
         @actual = nil
     end
     
-    def insertar (valor)
+    def insertar(valor)
         aux = Nodo.new(valor,nil)
         if @cabeza == nil
             @cabeza = aux
             @actual = aux
         elsif @cabeza.next == nil
             @cabeza.next = aux
-            @actual.next = aux
+            #@actual.next = aux
             @actual = aux
             elsif @cabeza.next != nil
                 @actual.next = aux
@@ -25,12 +26,17 @@ class Lista
     def eliminar
         aux = @cabeza.next
         @cabeza = aux
+        #@cabeza.value
     end
     
     def pop
         aux = @cabeza.next
         aux2 = @cabeza.value
         @cabeza = aux
-        aux2
+        if aux2.instance_of?Bibliog
+            aux2.to_s
+        elsif
+            aux2
+        end
     end
 end
