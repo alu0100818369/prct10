@@ -16,4 +16,8 @@ class Lista
             @actual = aux
         end
     end
+    def eliminar
+        aux = @cabeza.next
+        @cabeza = aux
+    end
 end

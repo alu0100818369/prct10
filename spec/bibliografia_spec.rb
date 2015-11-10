@@ -108,13 +108,14 @@ end
 describe Lista do
     before :all do
         @l = Lista.new
+        @l1 = Lista.new
     end
     describe "Pruebas de la lista" do
         it "En la lista vacia la cabeza debe ser nil" do
-            @l.cabeza.should eq(nil)
+            @l1.cabeza.should eq(nil)
         end
         it "En la lista vacia actual debe ser nil" do
-            @l.actual.should eq(nil)
+            @l1.actual.should eq(nil)
         end
         it "Insertar un valor" do
             aux = 5
