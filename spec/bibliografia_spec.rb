@@ -106,7 +106,7 @@ describe Nodo do
 end
 
 describe Lista do
-    before :all do
+    before :each do
         @l = Lista.new
         @l1 = Lista.new
         @l2 = Lista.new
@@ -127,18 +127,20 @@ describe Lista do
             @l1.actual.should eq(nil)
         end
         it "Insertar un valor" do
+            
+        end
+        it "Insertar un valor, eliminar un valor, extraer primer elemento" do
             @l.insertar(@aux)
             @l.actual.value.should eq(5)
             @l.actual.next.should eq(nil)
-        end
-        it "Eliminar un valor" do
             @l.insertar(@aux1)
             @l.eliminar
             @l.cabeza.value.should eq(7)
+            @l.insertar(@aux2)
+            @l.pop.should eq("7")
         end
         it "Extraer primer elemento" do
-            @l.insertar(@aux2)
-            @l.pop.should eq(7)
+            
         end
         it "mostrar bibliografia" do
             @l2.insertar(@b1)
