@@ -99,7 +99,7 @@ describe Nodo do
             @n.value.should eq ('a')
         end
         it "Debe existir un siguiente" do
-            @n.value.should eq ('b')
+            @n.next.should eq ('b')
         end
     end
         
