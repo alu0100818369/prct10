@@ -116,5 +116,11 @@ describe Lista do
         it "En la lista vacia actual debe ser nil" do
             @l.actual.should eq(nil)
         end
+        it "Insertar un valor" do
+            aux = 5
+            @l.insertar(5)
+            @l.actual.value.should eq(5)
+            @l.actual.next.shoul eq(nil)
+        end
     end
 end
