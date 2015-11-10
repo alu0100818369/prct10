@@ -109,6 +109,9 @@ describe Lista do
     before :all do
         @l = Lista.new
         @l1 = Lista.new
+        @aux = 5
+        @aux1 = 7
+        @aux2 = 9
     end
     describe "Pruebas de la lista" do
         it "En la lista vacia la cabeza debe ser nil" do
@@ -118,21 +121,18 @@ describe Lista do
             @l1.actual.should eq(nil)
         end
         it "Insertar un valor" do
-            aux = 5
-            @l.insertar(aux)
+            @l.insertar(@aux)
             @l.actual.value.should eq(5)
             @l.actual.next.should eq(nil)
         end
         it "Eliminar un valor" do
-            aux = 7
-            @l.insertar(aux)
+            @l.insertar(@aux1)
             @l.eliminar
-            @l.actual.value.should eq(7)
+            @l.cabeza.value.should eq(7)
         end
         it "Extraer primer elemento" do
-            aux = 9
-            @l.insertar(aux)
-            @l.pop.shoul eq(7)
+            @l.insertar(@aux2)
+            @l.pop.should eq(7)
         end
     end
 end
