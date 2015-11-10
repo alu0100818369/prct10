@@ -1,1 +1,1 @@
-Nodo = Struct.new(:value)
+Nodo = Struct.new(:value, :next)
