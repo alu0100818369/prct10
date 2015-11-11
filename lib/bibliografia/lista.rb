@@ -13,11 +13,7 @@ class Lista
         if @cabeza == nil
             @cabeza = aux
             @actual = aux
-        elsif @cabeza.next == nil
-            @cabeza.next = aux
-            #@actual.next = aux
-            @actual = aux
-            elsif @cabeza.next != nil
+            else
                 @actual.next = aux
                 @actual = aux
         end
@@ -26,17 +22,15 @@ class Lista
     def eliminar
         aux = @cabeza.next
         @cabeza = aux
-        #@cabeza.value
     end
     
     def pop
-        aux = @cabeza.next
         aux2 = @cabeza.value
-        @cabeza = aux
+        @cabeza = @cabeza.next
         if aux2.instance_of?Bibliog
             aux2.to_s
-        elsif
-            aux2
+        else
+            aux2.to_s
         end
     end
 end
