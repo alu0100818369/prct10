@@ -162,3 +162,7 @@ describe Lista do
         end
     end
 end
+
+describe Libro do
+    
+end
