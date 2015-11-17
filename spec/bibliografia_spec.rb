@@ -192,3 +192,7 @@ describe Libro do
         (@lib.is_a?BasicObject).should eq(true)
     end
 end
+
+describe Revista do
+    
+end
