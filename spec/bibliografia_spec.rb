@@ -222,3 +222,7 @@ describe Revista do
         (@rev.is_a?BasicObject).should eq(true)
     end
 end
+
+describe Electronica do
+
+end
