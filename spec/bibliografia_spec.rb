@@ -209,4 +209,16 @@ describe Revista do
     it "Comprobar si revista es instancia de BasicObject" do
         (@rev.instance_of?BasicObject).should eq(false)
     end
+    it "Comprobar si revista es un objeto Revista" do
+        (@rev.is_a?Revista).should eq(true)
+    end
+    it "Comprobar si revista es un objeto Bibliog" do
+        (@rev.is_a?Bibliog).should eq(true)
+    end
+    it "Comprobar si revista es un objeto Object" do
+        (@rev.is_a?Object).should eq(true)
+    end
+    it "Comprobar si revista es un objeto BasicObject" do
+        (@rev.is_a?BasicObject).should eq(true)
+    end
 end
