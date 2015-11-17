@@ -239,4 +239,16 @@ describe Electronica do
     it "Comprobar si electronica es instancia de BasicObject" do
         (@elec.instance_of?BasicObject).should eq(false)
     end
+    it "Comprobar si electronica es un objeto Electronica" do
+        (@elec.is_a?Electronica).should eq(true)
+    end
+    it "Comprobar si electronica es un objeto Bibliog" do
+        (@elec.is_a?Bibliog).should eq (true)
+    end
+    it "Comprobar si electronica es un objeto Object" do
+        (@elec.is_a?Object).should eq(true)
+    end
+    it "Comprobar si electronica es un objeto BasicObject" do
+        (@elec.is_a?BasicObject).should eq(true)
+    end
 end
