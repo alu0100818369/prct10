@@ -251,4 +251,7 @@ describe Electronica do
     it "Comprobar si electronica es un objeto BasicObject" do
         (@elec.is_a?BasicObject).should eq(true)
     end
+    it "Prueba guard" do
+        (@elec.class).should eq(Electronica)
+    end
 end
