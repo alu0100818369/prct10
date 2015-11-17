@@ -24,12 +24,17 @@ class Lista
     def eliminar
         aux = @cabeza.next
         @cabeza = aux
-        @cabeza.ant = nil
+        if @cabeza != nil
+            @cabeza.ant = nil
+        end  
     end
     
     def pop
         aux2 = @cabeza.value
         @cabeza = @cabeza.next
+        if @cabeza != nil
+            @cabeza.ant = nil
+        end
         if aux2.instance_of?Bibliog
             aux2.to_s
         else
