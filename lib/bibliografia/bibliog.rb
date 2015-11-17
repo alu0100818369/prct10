@@ -88,3 +88,7 @@ class Revista < Bibliog
     def initialize
     end
 end
+
+class Electronica
+    
+end
