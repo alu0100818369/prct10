@@ -224,5 +224,19 @@ describe Revista do
 end
 
 describe Electronica do
-
+    before :all do
+        @elec = Electronica.new
+    end
+    it "Comprobar si electronica es instancia de Electronica" do
+        (@elec.instance_of?Electronica).should eq(true)
+    end
+    it "Comprobar si electronica es instancia de Bibliog" do
+        (@elec.instance_of?Bibliog).should eq(false)
+    end
+    it "Comprobar si electronica es instancia de Object" do
+        (@elec.instance_of?Object).should eq(false)
+    end
+    it "Comprobar si electronica es instancia de BasicObject" do
+        (@elec.instance_of?BasicObject).should eq(false)
+    end
 end
