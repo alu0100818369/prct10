@@ -179,4 +179,16 @@ describe Libro do
     it "Comprobar si libro es instancia de BasicObject" do
         (@lib.instance_of?BasicObject).should eq(false)
     end
+    it "Comprobar si libro es un objeto Librot" do
+        (@lib.is_a?Libro).should eq(true)
+    end
+    it "Comprobar si libro es un objeto Bibliog" do
+        (@lib.is_a?Bibliog).should eq(true)
+    end
+    it "Comprobar si libro es un objeto Object" do
+        (@lib.is_a?Object).should eq(true)
+    end
+    it "Comprobar si libro es un objeto BasicObject" do
+        (@lib.is_a?BasicObject).should eq(true)
+    end
 end
