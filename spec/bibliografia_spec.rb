@@ -164,5 +164,19 @@ describe Lista do
 end
 
 describe Libro do
-    
+    before :all do
+        @lib = Libro.new
+    end
+    it "Comprobar si libro es instancia de Libro" do
+        (@lib.instance_of?Libro).should eq(true)
+    end
+    it "Comprobar si libro es instancia de Bibliog" do
+        (@lib.instance_of?Bibliog).should eq(false)
+    end
+    it "Comprobar si libro es instancia de Object" do
+        (@lib.instance_of?Object).should eq(false)
+    end
+    it "Comprobar si libro es instancia de BasicObject" do
+        (@lib.instance_of?BasicObject).should eq(false)
+    end
 end
