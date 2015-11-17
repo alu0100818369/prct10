@@ -1,5 +1,5 @@
 require_relative 'bibliog'
-Nodo = Struct.new(:value, :next)
+Nodo = Struct.new(:value, :next, :ant)
 
 class Lista
     attr_accessor :cabeza, :actual
