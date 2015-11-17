@@ -83,3 +83,7 @@ class Libro < Bibliog
     def initialize
     end
 end
+
+class Revista
+    
+end
