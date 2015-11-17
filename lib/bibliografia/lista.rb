@@ -24,6 +24,7 @@ class Lista
     def eliminar
         aux = @cabeza.next
         @cabeza = aux
+        @cabeza.ant = nil
     end
     
     def pop
