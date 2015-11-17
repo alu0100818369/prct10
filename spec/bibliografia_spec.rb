@@ -141,6 +141,7 @@ describe Lista do
             @l.actual.ant.value.should eq(5)
             @l.eliminar
             @l.cabeza.value.should eq(7)
+            @l.cabeza.ant.should eq(nil)
             @l.insertar(@aux2)
             @l.pop.should eq("7")
         end
