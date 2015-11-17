@@ -9,13 +9,15 @@ class Lista
     end
     
     def insertar(valor)
-        aux = Nodo.new(valor,nil)
+        aux = Nodo.new(valor,nil, nil)
         if @cabeza == nil
             @cabeza = aux
             @actual = aux
             else
+                aux1 = @actual
                 @actual.next = aux
                 @actual = aux
+                @actual.ant = aux1
         end
     end
     

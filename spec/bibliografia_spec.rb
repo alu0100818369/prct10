@@ -138,7 +138,7 @@ describe Lista do
             @l.actual.next.should eq(nil)
             @l.actual.ant.should eq(nil)
             @l.insertar(@aux1)
-            @l.actual.ant.should eq(5)
+            @l.actual.ant.value.should eq(5)
             @l.eliminar
             @l.cabeza.value.should eq(7)
             @l.insertar(@aux2)
