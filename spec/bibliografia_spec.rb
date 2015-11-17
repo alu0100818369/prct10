@@ -132,11 +132,13 @@ describe Lista do
         it "Insertar un valor" do
             
         end
-        it "Insertar un valor, eliminar un valor, extraer primer elemento" do
+        it "Insertar un valor, eliminar un valor, extraer primer elemento, para lista doblemente enlazada" do
             @l.insertar(@aux)
             @l.actual.value.should eq(5)
             @l.actual.next.should eq(nil)
+            @l.actual.ant.should eq(nil)
             @l.insertar(@aux1)
+            @l.actual.ant.should eq(5)
             @l.eliminar
             @l.cabeza.value.should eq(7)
             @l.insertar(@aux2)
