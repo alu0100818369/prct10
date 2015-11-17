@@ -194,5 +194,19 @@ describe Libro do
 end
 
 describe Revista do
-    
+    before :all do
+        @rev = Revista.new
+    end
+    it "Comprobar si revista es instancia de Revista" do
+        (@rev.instance_of?Revista).should eq(true)
+    end
+    it "Comprobar si revista es instancia de Bibliog" do
+        (@rev.instance_of?Bibliog).should eq(false)
+    end
+    it "Comprobar si revista es instancia de Object" do
+        (@rev.instance_of?Object).should eq(false)
+    end
+    it "Comprobar si revista es instancia de BasicObject" do
+        (@rev.instance_of?BasicObject).should eq(false)
+    end
 end
