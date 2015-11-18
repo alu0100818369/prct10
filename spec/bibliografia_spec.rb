@@ -195,7 +195,7 @@ end
 
 describe Revista do
     before :all do
-        @rev = Revista.new
+        @rev = Revista.new(['Juan'], 'Curiosidades del baloncesto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Revista: DeportesdeHoy','Deporte')
     end
     it "Comprobar si revista es instancia de Revista" do
         (@rev.instance_of?Revista).should eq(true)
