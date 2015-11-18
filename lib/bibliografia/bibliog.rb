@@ -80,7 +80,9 @@ end
 
 
 class Libro < Bibliog
-    def initialize
+    def initialize(a, t, e, ed, mes, anno, isbn, r, s="none")
+        super(a, t, e, ed,mes, anno, isbn, s)
+        @resumen = r
     end
 end
 
