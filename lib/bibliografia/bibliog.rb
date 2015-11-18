@@ -94,6 +94,8 @@ class Revista < Bibliog
 end
 
 class Electronica < Bibliog
-    def initialize
+    def initialize(a, t, e, ed, mes, anno, isbn, u, s="none")
+        super(a, t, e, ed,mes, anno, isbn, s)
+        @url = u
     end
 end
