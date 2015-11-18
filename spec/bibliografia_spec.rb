@@ -225,7 +225,7 @@ end
 
 describe Electronica do
     before :all do
-        @elec = Electronica.new
+        @elec = Electronica.new(['Maria'], 'Los mejores editores de texto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'http://www.maria.com','Informatica')
     end
     it "Comprobar si electronica es instancia de Electronica" do
         (@elec.instance_of?Electronica).should eq(true)
