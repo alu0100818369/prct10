@@ -165,7 +165,7 @@ end
 
 describe Libro do
     before :all do
-        @lib = Libro.new(['Ana'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @lib = Libro.new(['Ana'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Libro de autosuperacion','Salud')
     end
     it "Comprobar si libro es instancia de Libro" do
         (@lib.instance_of?Libro).should eq(true)
