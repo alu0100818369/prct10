@@ -166,17 +166,22 @@ describe Lista do
             @l2.insertar(@b3)
             @l2.insertar(@b4)
             @l2.insertar(@b5)
-            #describe "Pruebas enumerable" do
-                #it "Prueba max/min" do
-                    expect(@l2.min).to eq(@b2)
-                    expect(@l2.max).to eq(@b4)
-                #end
-            #end
             expect(@l2.pop).to eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
             expect(@l2.pop).to eq("Scott Chacon.\nPro Git 2009th Edition\n(Pro)\nApress; 2009 edition (August 27, 2009)\nISBN-13: 978-1430218333\nISBN-10: 1430218339")
             expect(@l2.pop).to eq("David Flanagan, Yukihiro Matsumoto.\nThe Ruby Programming Language\n(none)\nO’Reilly Media; 1 edition (February 4, 2008)\nISBN-10: 0596516177\nISBN-13: 978-0596516178")
             expect(@l2.pop).to eq("David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis, Aslak Hellesoy.\nThe RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends\n(The Facets of Ruby)\nPragmatic Bookshelf; 1 edition (December 25, 2010)\nISBN-10: 1934356379\nISBN-13: 978-1934356371")
             expect(@l2.pop).to eq("Richard E.\nSilverman Git Pocket Guide\n(none)\nO’Reilly Media; 1 edition (August 2, 2013)\nISBN-10: 1449325866\nISBN-13: 978-1449325862")
+        end
+        describe "Pruebas enumerable" do
+            it "Prueba max/min" do
+                @l2.insertar(@b1)
+                @l2.insertar(@b2)
+                @l2.insertar(@b3)
+                 @l2.insertar(@b4)
+                @l2.insertar(@b5)
+                expect(@l2.min).to eq(@b2)
+                expect(@l2.max).to eq(@b4)
+            end
         end
     end
 end

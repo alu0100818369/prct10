@@ -3,6 +3,7 @@ Nodo = Struct.new(:value, :next, :ant)
 
 class Lista
     attr_accessor :cabeza, :actual
+    include Enumerable
     def initialize
         @cabeza = nil
         @actual = nil
@@ -40,5 +41,14 @@ class Lista
         else
             aux2.to_s
         end
+    end
+    
+    def each
+        aux = @cabeza
+        while aux.next!=nil
+            yield aux.value
+            aux=aux.next
+        end
+        yield aux.value
     end
 end
