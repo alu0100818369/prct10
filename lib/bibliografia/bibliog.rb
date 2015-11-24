@@ -15,7 +15,12 @@ class Bibliog
     
     def <=>(other)
         return nil unless other.is_a? Bibliog
-        @titulo <=> other.titulo
+        @titulo.length <=> (other.titulo).length
+    end
+    
+    def ==(other)
+        #return nil unless other.is_a? Bibliog
+        @titulo == other.titulo
     end
     
     def get_autores

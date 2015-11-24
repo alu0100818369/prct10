@@ -95,6 +95,10 @@ describe Bibliog do
             expect(@b1==@b3).to eq(false)
             expect(@b4==@b3).to eq(true)
         end
+        it "Comparando mayor y menor" do
+            expect(@b1<@b3).to eq(false)
+            expect(@b1>@b3).to eq(true)
+        end
     end
 end
 
@@ -205,6 +209,9 @@ describe Libro do
         expect(@lib==@lib2).to eq(false)
         expect(@lib==@lib3).to eq(true)
     end
+    describe "Pruebas enumerable" do
+        
+    end
 end
 
 describe Revista do
@@ -240,6 +247,7 @@ describe Revista do
     it "Comprobar igualdad" do
         expect(@rev==@rev2).to eq(false)
         expect(@rev==@rev3).to eq(true)
+        expect(@rev>@rev2).to eq(true)
     end
 end
 
