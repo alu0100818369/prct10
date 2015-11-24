@@ -173,7 +173,7 @@ describe Lista do
             expect(@l2.pop).to eq("Richard E.\nSilverman Git Pocket Guide\n(none)\nO’Reilly Media; 1 edition (August 2, 2013)\nISBN-10: 1449325866\nISBN-13: 978-1449325862")
         end
         describe "Pruebas enumerable" do
-            it "Prueba max/min" do
+            it "Prueba max/min " do
                 @l2.insertar(@b1)
                 @l2.insertar(@b2)
                 @l2.insertar(@b3)
