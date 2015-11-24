@@ -1,5 +1,6 @@
 class Bibliog
     attr_reader :autores, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn
+    include Comparable
     
     def initialize(a, t, e, ed, mes, anno, isbn, s="none")
         @autores = a
@@ -10,6 +11,11 @@ class Bibliog
         @mes = mes
         @anno = anno
         @isbn = isbn
+    end
+    
+    def <=>(other)
+        return nil unless other.is_a? Bibliog
+        @titulo <=> other.titulo
     end
     
     def get_autores
