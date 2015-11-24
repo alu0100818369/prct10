@@ -9,83 +9,83 @@ describe Bibliog do
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
-             @b1.autores.should eq(['Dave Thomas', 'Andy Hunt','Chad Fowler'])
+             expect(@b1.autores).to eq(['Dave Thomas', 'Andy Hunt','Chad Fowler'])
         end
     end
     describe "# almacenamiento de titulo" do
         it "Debe existir un titulo" do
-             @b1.titulo.should eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
+             expect(@b1.titulo).to eq('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
         end
     end
     describe "# almacenamiento de serie" do
         it "Debe existir una serie" do
-             @b1.serie.should eq('The Facets of Ruby')
+             expect(@b1.serie).to eq('The Facets of Ruby')
         end
         it "No debe existir una serie" do
-             @b2.serie.should eq('none')
+             expect(@b2.serie).to eq('none')
         end
     end
     describe "# almacenamiento de editorial" do
         it "Debe existir una editorial" do
-             @b1.editorial.should eq('Pragmatic Bookshelf')
+             expect(@b1.editorial).to eq('Pragmatic Bookshelf')
         end
     end
     describe "# almacenamiento de edicion" do
         it "Debe existir un numero de edicion" do
-             @b1.edicion.should eq(4)
+             expect(@b1.edicion).to eq(4)
         end
     end
     describe "# almacenamiento de fecha" do
         it "Debe existir un dia y un mes" do
-             @b1.mes.should eq('July 7')
+             expect(@b1.mes).to eq('July 7')
         end
         it "Debe existir un año" do
-             @b1.anno.should eq(2013)
+             expect(@b1.anno).to eq(2013)
         end
     end
     describe "# almacenamiento de uno o mas ISBN" do
         it "Debe existir uno o mas ISBN" do
-             @b1.isbn.should eq(['9781937785499', '1937785491'])
+             expect(@b1.isbn).to eq(['9781937785499', '1937785491'])
         end
     end
     describe "# metodo para obtener los autores" do
         it "Debe existir un metodo para obtener la lista de autores" do
-             @b1.get_autores.should eq("Dave Thomas, Andy Hunt, Chad Fowler")
+             expect(@b1.get_autores).to eq("Dave Thomas, Andy Hunt, Chad Fowler")
         end
     end
     describe "# metodo para obtener el titulo" do
         it "Debe existir un metodo para obtener el titulo" do
-             @b1.get_titulo.should eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide")
+             expect(@b1.get_titulo).to eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide")
         end
     end
     describe "# metodo para obtener la serie" do
         it "Debe existir un metodo para obtener la serie" do
-             @b1.get_serie.should eq("The Facets of Ruby")
+             expect(@b1.get_serie).to eq("The Facets of Ruby")
         end
     end
     describe "# metodo para obtener la editorial" do
         it "Debe existir un metodo para obtener la editorial" do
-             @b1.get_editorial.should eq("Pragmatic Bookshelf")
+             expect(@b1.get_editorial).to eq("Pragmatic Bookshelf")
         end
     end
     describe "# metodo para obtener el numero de edicion" do
         it "Debe existir un metodo para obtener el numero de edicion" do
-             @b1.get_edicion.should eq("4")
+             expect(@b1.get_edicion).to eq("4")
         end
     end
     describe "# metodo para obtener la fecha" do
         it "Debe existir unmetodo para obtener la fecha" do
-             @b1.get_fecha.should eq("July 7, 2013")
+             expect(@b1.get_fecha).to eq("July 7, 2013")
         end
     end
     describe "# metodo para obtener los ISBN" do
         it "Debe existir un metodo para obtener los ISBN" do
-             @b1.get_isbn.should eq("ISBN-13: 978-1937785499\nISBN-10: 1937785491")
+             expect(@b1.get_isbn).to eq("ISBN-13: 978-1937785499\nISBN-10: 1937785491")
         end
     end
     describe "# formateo de la referencia" do
         it "Debe existir un metodo que formatee la referencia" do
-            @b1.to_s.should eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
+            expect(@b1.to_s).to eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
         end
     end
 end
@@ -96,13 +96,13 @@ describe Nodo do
     end
     describe "Variables del nodo" do
         it "Debe existir un valor" do
-            @n.value.should eq ('a')
+            expect(@n.value).to eq ('a')
         end
         it "Debe existir un siguiente" do
-            @n.next.should eq ('b')
+            expect(@n.next).to eq ('b')
         end
         it "Debe existir un anterior" do
-            @n.ant.should eq('c')
+            expect(@n.ant).to eq('c')
         end
     end
         
@@ -124,26 +124,26 @@ describe Lista do
     end
     describe "Pruebas de la lista" do
         it "En la lista vacia la cabeza debe ser nil" do
-            @l1.cabeza.should eq(nil)
+            expect(@l1.cabeza).to eq(nil)
         end
         it "En la lista vacia actual debe ser nil" do
-            @l1.actual.should eq(nil)
+            expect(@l1.actual).to eq(nil)
         end
         it "Insertar un valor" do
             
         end
         it "Insertar un valor, eliminar un valor, extraer primer elemento, para lista doblemente enlazada" do
             @l.insertar(@aux)
-            @l.actual.value.should eq(5)
-            @l.actual.next.should eq(nil)
-            @l.actual.ant.should eq(nil)
+            expect(@l.actual.value).to eq(5)
+            expect(@l.actual.next).to eq(nil)
+            expect(@l.actual.ant).to eq(nil)
             @l.insertar(@aux1)
-            @l.actual.ant.value.should eq(5)
+            expect(@l.actual.ant.value).to eq(5)
             @l.eliminar
-            @l.cabeza.value.should eq(7)
-            @l.cabeza.ant.should eq(nil)
+            expect(@l.cabeza.value).to eq(7)
+            expect(@l.cabeza.ant).to eq(nil)
             @l.insertar(@aux2)
-            @l.pop.should eq("7")
+            expect(@l.pop).to eq("7")
         end
         it "Extraer primer elemento" do
             
@@ -154,11 +154,11 @@ describe Lista do
             @l2.insertar(@b3)
             @l2.insertar(@b4)
             @l2.insertar(@b5)
-            @l2.pop.should eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
-            @l2.pop.should eq("Scott Chacon.\nPro Git 2009th Edition\n(Pro)\nApress; 2009 edition (August 27, 2009)\nISBN-13: 978-1430218333\nISBN-10: 1430218339")
-            @l2.pop.should eq("David Flanagan, Yukihiro Matsumoto.\nThe Ruby Programming Language\n(none)\nO’Reilly Media; 1 edition (February 4, 2008)\nISBN-10: 0596516177\nISBN-13: 978-0596516178")
-            @l2.pop.should eq("David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis, Aslak Hellesoy.\nThe RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends\n(The Facets of Ruby)\nPragmatic Bookshelf; 1 edition (December 25, 2010)\nISBN-10: 1934356379\nISBN-13: 978-1934356371")
-            @l2.pop.should eq("Richard E.\nSilverman Git Pocket Guide\n(none)\nO’Reilly Media; 1 edition (August 2, 2013)\nISBN-10: 1449325866\nISBN-13: 978-1449325862")
+            expect(@l2.pop).to eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
+            expect(@l2.pop).to eq("Scott Chacon.\nPro Git 2009th Edition\n(Pro)\nApress; 2009 edition (August 27, 2009)\nISBN-13: 978-1430218333\nISBN-10: 1430218339")
+            expect(@l2.pop).to eq("David Flanagan, Yukihiro Matsumoto.\nThe Ruby Programming Language\n(none)\nO’Reilly Media; 1 edition (February 4, 2008)\nISBN-10: 0596516177\nISBN-13: 978-0596516178")
+            expect(@l2.pop).to eq("David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis, Aslak Hellesoy.\nThe RSpec Book: Behaviour Driven Development with RSpec, Cucumber, and Friends\n(The Facets of Ruby)\nPragmatic Bookshelf; 1 edition (December 25, 2010)\nISBN-10: 1934356379\nISBN-13: 978-1934356371")
+            expect(@l2.pop).to eq("Richard E.\nSilverman Git Pocket Guide\n(none)\nO’Reilly Media; 1 edition (August 2, 2013)\nISBN-10: 1449325866\nISBN-13: 978-1449325862")
         end
     end
 end
@@ -168,28 +168,28 @@ describe Libro do
         @lib = Libro.new(['Ana'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Libro de autosuperacion','Salud')
     end
     it "Comprobar si libro es instancia de Libro" do
-        (@lib.instance_of?Libro).should eq(true)
+        expect(@lib.instance_of?Libro).to eq(true)
     end
     it "Comprobar si libro es instancia de Bibliog" do
-        (@lib.instance_of?Bibliog).should eq(false)
+        expect(@lib.instance_of?Bibliog).to eq(false)
     end
     it "Comprobar si libro es instancia de Object" do
-        (@lib.instance_of?Object).should eq(false)
+        expect(@lib.instance_of?Object).to eq(false)
     end
     it "Comprobar si libro es instancia de BasicObject" do
-        (@lib.instance_of?BasicObject).should eq(false)
+        expect(@lib.instance_of?BasicObject).to eq(false)
     end
     it "Comprobar si libro es un objeto Librot" do
-        (@lib.is_a?Libro).should eq(true)
+        expect(@lib.is_a?Libro).to eq(true)
     end
     it "Comprobar si libro es un objeto Bibliog" do
-        (@lib.is_a?Bibliog).should eq(true)
+        expect(@lib.is_a?Bibliog).to eq(true)
     end
     it "Comprobar si libro es un objeto Object" do
-        (@lib.is_a?Object).should eq(true)
+        expect(@lib.is_a?Object).to eq(true)
     end
     it "Comprobar si libro es un objeto BasicObject" do
-        (@lib.is_a?BasicObject).should eq(true)
+        expect(@lib.is_a?BasicObject).to eq(true)
     end
 end
 
@@ -198,28 +198,28 @@ describe Revista do
         @rev = Revista.new(['Juan'], 'Curiosidades del baloncesto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Revista: DeportesdeHoy','Deporte')
     end
     it "Comprobar si revista es instancia de Revista" do
-        (@rev.instance_of?Revista).should eq(true)
+        expect(@rev.instance_of?Revista).to eq(true)
     end
     it "Comprobar si revista es instancia de Bibliog" do
-        (@rev.instance_of?Bibliog).should eq(false)
+        expect(@rev.instance_of?Bibliog).to eq(false)
     end
     it "Comprobar si revista es instancia de Object" do
-        (@rev.instance_of?Object).should eq(false)
+        expect(@rev.instance_of?Object).to eq(false)
     end
     it "Comprobar si revista es instancia de BasicObject" do
-        (@rev.instance_of?BasicObject).should eq(false)
+        expect(@rev.instance_of?BasicObject).to eq(false)
     end
     it "Comprobar si revista es un objeto Revista" do
-        (@rev.is_a?Revista).should eq(true)
+        expect(@rev.is_a?Revista).to eq(true)
     end
     it "Comprobar si revista es un objeto Bibliog" do
-        (@rev.is_a?Bibliog).should eq(true)
+        expect(@rev.is_a?Bibliog).to eq(true)
     end
     it "Comprobar si revista es un objeto Object" do
-        (@rev.is_a?Object).should eq(true)
+        expect(@rev.is_a?Object).to eq(true)
     end
     it "Comprobar si revista es un objeto BasicObject" do
-        (@rev.is_a?BasicObject).should eq(true)
+        expect(@rev.is_a?BasicObject).to eq(true)
     end
 end
 
@@ -228,30 +228,30 @@ describe Electronica do
         @elec = Electronica.new(['Maria'], 'Los mejores editores de texto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'http://www.maria.com','Informatica')
     end
     it "Comprobar si electronica es instancia de Electronica" do
-        (@elec.instance_of?Electronica).should eq(true)
+        expect(@elec.instance_of?Electronica).to eq(true)
     end
     it "Comprobar si electronica es instancia de Bibliog" do
-        (@elec.instance_of?Bibliog).should eq(false)
+        expect(@elec.instance_of?Bibliog).to eq(false)
     end
     it "Comprobar si electronica es instancia de Object" do
-        (@elec.instance_of?Object).should eq(false)
+        expect(@elec.instance_of?Object).to eq(false)
     end
     it "Comprobar si electronica es instancia de BasicObject" do
-        (@elec.instance_of?BasicObject).should eq(false)
+        expect(@elec.instance_of?BasicObject).to eq(false)
     end
     it "Comprobar si electronica es un objeto Electronica" do
-        (@elec.is_a?Electronica).should eq(true)
+        expect(@elec.is_a?Electronica).to eq(true)
     end
     it "Comprobar si electronica es un objeto Bibliog" do
-        (@elec.is_a?Bibliog).should eq (true)
+        expect(@elec.is_a?Bibliog).to eq (true)
     end
     it "Comprobar si electronica es un objeto Object" do
-        (@elec.is_a?Object).should eq(true)
+        expect(@elec.is_a?Object).to eq(true)
     end
     it "Comprobar si electronica es un objeto BasicObject" do
-        (@elec.is_a?BasicObject).should eq(true)
+        expect(@elec.is_a?BasicObject).to eq(true)
     end
-    it "Prueba guard" do
-        (@elec.class).should eq(Electronica)
+    it "Prueba guard " do
+        expect(@elec.class).to eq(Electronica)
     end
 end
