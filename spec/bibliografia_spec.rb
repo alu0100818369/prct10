@@ -174,6 +174,8 @@ end
 describe Libro do
     before :all do
         @lib = Libro.new(['Ana'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Libro de autosuperacion','Salud')
+        @lib2 = Libro.new(['Ana'], 'Otra vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Libro de autosuperacion','Salud')
+        @lib3 = Libro.new(['Ana'], 'Nueva vida', 'Otra editorial', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Libro de autosuperacion','Salud')
     end
     it "Comprobar si libro es instancia de Libro" do
         expect(@lib.instance_of?Libro).to eq(true)
@@ -198,6 +200,10 @@ describe Libro do
     end
     it "Comprobar si libro es un objeto BasicObject" do
         expect(@lib.is_a?BasicObject).to eq(true)
+    end
+    it "Comprobar igualdad" do
+        expect(@lib==@lib2).to eq(false)
+        expect(@lib==@lib3).to eq(true)
     end
 end
 
