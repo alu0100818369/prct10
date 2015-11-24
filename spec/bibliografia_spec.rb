@@ -166,6 +166,12 @@ describe Lista do
             @l2.insertar(@b3)
             @l2.insertar(@b4)
             @l2.insertar(@b5)
+            #describe "Pruebas enumerable" do
+                #it "Prueba max/min" do
+                    expect(@l2.min).to eq(@b2)
+                    expect(@l2.max).to eq(@b4)
+                #end
+            #end
             expect(@l2.pop).to eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
             expect(@l2.pop).to eq("Scott Chacon.\nPro Git 2009th Edition\n(Pro)\nApress; 2009 edition (August 27, 2009)\nISBN-13: 978-1430218333\nISBN-10: 1430218339")
             expect(@l2.pop).to eq("David Flanagan, Yukihiro Matsumoto.\nThe Ruby Programming Language\n(none)\nO’Reilly Media; 1 edition (February 4, 2008)\nISBN-10: 0596516177\nISBN-13: 978-0596516178")
@@ -208,9 +214,6 @@ describe Libro do
     it "Comprobar igualdad" do
         expect(@lib==@lib2).to eq(false)
         expect(@lib==@lib3).to eq(true)
-    end
-    describe "Pruebas enumerable" do
-        
     end
 end
 
