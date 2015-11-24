@@ -210,6 +210,8 @@ end
 describe Revista do
     before :all do
         @rev = Revista.new(['Juan'], 'Curiosidades del baloncesto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Revista: DeportesdeHoy','Deporte')
+        @rev2 = Revista.new(['Juan'], 'Curiosidades del futbol', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Revista: DeportesdeHoy','Deporte')
+        @rev3 = Revista.new(['Juan'], 'Curiosidades del baloncesto', 'otra', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Revista: DeportesdeHoy','Deporte')
     end
     it "Comprobar si revista es instancia de Revista" do
         expect(@rev.instance_of?Revista).to eq(true)
@@ -234,6 +236,10 @@ describe Revista do
     end
     it "Comprobar si revista es un objeto BasicObject" do
         expect(@rev.is_a?BasicObject).to eq(true)
+    end
+    it "Comprobar igualdad" do
+        expect(@rev==@rev2).to eq(false)
+        expect(@rev==@rev3).to eq(true)
     end
 end
 
