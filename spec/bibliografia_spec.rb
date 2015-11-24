@@ -6,6 +6,8 @@ describe Bibliog do
     before :all do
         @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
         @b2 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'])
+        @b3 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Titulo2', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @b4 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Titulo2', 'Editorial2', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
     end
     describe "# almacenamiento de autores" do
         it "Debe existir uno o mas autores" do
@@ -86,6 +88,12 @@ describe Bibliog do
     describe "# formateo de la referencia" do
         it "Debe existir un metodo que formatee la referencia" do
             expect(@b1.to_s).to eq("Dave Thomas, Andy Hunt, Chad Fowler.\nProgramming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide\n(The Facets of Ruby)\nPragmatic Bookshelf; 4 edition (July 7, 2013)\nISBN-13: 978-1937785499\nISBN-10: 1937785491")
+        end
+    end
+    describe "Probando comparable en bibliografia" do
+        it "Comparando igualdad" do
+            expect(@b1==@b3).to eq(false)
+            expect(@b4==@b3).to eq(true)
         end
     end
 end
