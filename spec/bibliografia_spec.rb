@@ -246,6 +246,8 @@ end
 describe Electronica do
     before :all do
         @elec = Electronica.new(['Maria'], 'Los mejores editores de texto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'http://www.maria.com','Informatica')
+        @elec1 = Electronica.new(['Maria'], 'Los mejores editores de texto2', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'http://www.maria.com','Informatica')
+        @elec2 = Electronica.new(['Maria'], 'Los mejores editores de texto', 'otra', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'http://www.maria.com','Informatica')
     end
     it "Comprobar si electronica es instancia de Electronica" do
         expect(@elec.instance_of?Electronica).to eq(true)
@@ -273,5 +275,9 @@ describe Electronica do
     end
     it "Prueba guard " do
         expect(@elec.class).to eq(Electronica)
+    end
+    it "Prueba igualdad" do
+        expect(@elec==@elec1).to eq(false)
+        expect(@elec==@elec2).to eq(true)
     end
 end
