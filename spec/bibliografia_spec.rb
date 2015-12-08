@@ -338,4 +338,8 @@ describe Cita do
         @c.insertar(@b5)
         expect(@c.nombre(@c.lo[0])).to eq("Glez, A., Acosta, J. & Perez, P.")
     end
+    it "probar sangría" do
+         @c.insertar(@b5)
+        expect(@c.mostrar).to eq("Glez, A., Acosta, J. & Perez, P.\n   Nueva Vida\n   (Salud)\n   Dell; 3 edition (Junio 8, 2012)\n   ISBN-10: 1449325866\n   ISBN-13: 978-1449325862")
+    end
 end
