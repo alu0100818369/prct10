@@ -308,6 +308,7 @@ describe Cita do
         @b3 = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
         @b4 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida 2', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
         @b5 = Bibliog.new(['Ana', 'Juan', 'Pedro'], ['Glez', 'Acosta', 'Perez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @rev = Revista.new(['Juan'], ['Glez'], 'Curiosidades del baloncesto', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Revista: DeportesdeHoy','Deporte')
     end
     it "Probando nombre--Apellido, N" do
         expect(@c.nombre(@b)).to eq("Glez, A. & Acosta, J.")
@@ -341,5 +342,9 @@ describe Cita do
     it "probar sangría" do
          @c.insertar(@b5)
         expect(@c.mostrar).to eq("Glez, A., Acosta, J. & Perez, P.\n   Nueva vida\n   (Salud)\n   Dell; 3 edition (Junio 8, 2012)\n   ISBN-10: 1449325866\n   ISBN-13: 978-1449325862")
+    end
+    it "poner en mayuscula primera letra de las palabras del titulo de una revista" do
+        @c.insertar(@rev)
+        expect(@c.lo[0].titulo).to eq("Curiosidades Del Baloncesto")
     end
 end
