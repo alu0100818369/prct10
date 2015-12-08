@@ -307,6 +307,7 @@ describe Cita do
         @b2 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
         @b3 = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
         @b4 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida 2', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
+        @b5 = Bibliog.new(['Ana', 'Juan', 'Pedro'], ['Glez', 'Acosta', 'Perez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
     end
     it "Probando nombre--Apellido, N" do
         expect(@c.nombre(@b)).to eq("Glez, A., Acosta, J.")
@@ -332,5 +333,9 @@ describe Cita do
        @c.insertar(@b4)
        @c.insertar(@b2)
        expect(@c.lo[0].titulo).to eq("Nueva vida")
+    end
+    it "usar &" do
+        @c.insertar(@b5)
+        expect(@c.nombre(@c.lo[0])).to eq("Glez, A., Acosta, J. & Perez, P.")
     end
 end
