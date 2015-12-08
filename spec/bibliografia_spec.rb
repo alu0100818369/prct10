@@ -302,9 +302,16 @@ end
 describe Cita do
     before :all do
         @c = Cita.new
-        @b = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @b = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @b1 = Bibliog.new(['Ana', 'Juan'], ['Arleo', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @l = Lista.new
     end
     it "Probando nombre--Apellido, N" do
-        expect(@c.nombre(@b)).to eq("Glez, A.")
+        expect(@c.nombre(@b)).to eq("Glez, A., Acosta, J.")
+    end
+    it "Probando el orden de entrada" do
+        @c.insertar(@b)
+        @c.insertar(@b1)
+        expect(@c[1].nombre).to eq("Arleo, A., Acosta, J.")
     end
 end
