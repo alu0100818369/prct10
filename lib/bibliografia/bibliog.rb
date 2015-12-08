@@ -80,7 +80,7 @@ class Bibliog
         while i < size
             a = @isbn[i].length
             
-            cadena = "#{cadena}"+"\nISBN-#{a}: "
+            cadena = "#{cadena}"+"\n   ISBN-#{a}: "
             if a > 10
                 cadena = "#{cadena}"+"#{@isbn[i][-a..-11]}"+"-"+"#{@isbn[i][-10..-1]}"
             else
