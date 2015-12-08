@@ -298,3 +298,7 @@ describe Electronica do
         expect(@elec==@elec2).to eq(true)
     end
 end
+
+describe Cita do
+    
+end
