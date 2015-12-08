@@ -301,9 +301,10 @@ end
 
 describe Cita do
     before :all do
-         @b = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @c = Cita.new
+        @b = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
     end
     it "Probando nombre--Apellido, N" do
-        expect(@b.nombre).to eq("Glez, A.")
+        expect(@c.nombre(@b)).to eq("Glez, A.")
     end
 end
