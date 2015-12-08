@@ -16,7 +16,11 @@ class Bibliog
     
     def <=>(other)
         return nil unless other.is_a? Bibliog
-        @apellidos <=> other.apellidos
+        if(@apellidos!=other.apellidos)
+            @apellidos <=> other.apellidos
+        else
+            @anno<=>other.anno
+        end
     end
     
     def ==(other)
