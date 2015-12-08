@@ -2,4 +2,3 @@ source 'https://rubygems.org'
 
 # Specify your gem's dependencies in bibliografia.gemspec
 gemspec
-gem 'coveralls', require: false
