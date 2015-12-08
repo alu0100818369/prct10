@@ -29,11 +29,11 @@ class Cita
         size = @lo.length
         i=0
         while(i<size)
-            cadena = "#{nombre(lo[i])}\n   "
-            cadena = "#{cadena}"+"#{lo[i].get_titulo}\n   "
-            cadena = "#{cadena}"+"(#{lo[i].get_serie})\n   "
-            cadena = "#{cadena}"+"#{lo[i].get_editorial}; #{lo[i].get_edicion} edition (#{lo[i].get_fecha})\n   "
-            cadena = "#{cadena}"+"#{lo[i].get_isbn}\n"
+            cadena = "#{nombre(@lo[i])}\n   "
+            cadena = "#{cadena}"+"#{@lo[i].get_titulo}\n   "
+            cadena = "#{cadena}"+"(#{@lo[i].get_serie})\n   "
+            cadena = "#{cadena}"+"#{@lo[i].get_editorial}; #{@lo[i].get_edicion} edition (#{@lo[i].get_fecha})\n   "
+            cadena = "#{cadena}"+"#{@lo[i].get_isbn}\n"
             i = i+1
         end
         cadena = cadena[0..-2]

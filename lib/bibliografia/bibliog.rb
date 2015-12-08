@@ -112,6 +112,14 @@ class Revista < Bibliog
     def initialize(a, ap, t, e, ed, mes, anno, isbn, n, s="none")
         super(a, ap, t, e, ed,mes, anno, isbn, s)
         @nom_revista = n
+        token1 = @titulo.split
+        @titulo = ''
+        i=0
+        while(i<token1.length-1)
+            @titulo ="#{@titulo}"+ "#{token1[i].capitalize} "
+            i = i+1
+        end
+        @titulo ="#{@titulo}"+ "#{token1[i].capitalize}"
     end
 end
 
