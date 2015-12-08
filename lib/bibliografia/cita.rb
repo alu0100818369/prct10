@@ -2,9 +2,10 @@ require_relative 'bibliog'
 require_relative 'lista'
 
 class Cita
-    attr_accessor :l
+    attr_accessor :l, :lo
     def initialize
         @l=Lista.new
+        @lo=Lista.new
     end
     def nombre(b)
         i = 0
@@ -17,7 +18,7 @@ class Cita
     
     def insertar(b)
         @l.insertar(b)
-        @l.sort
+        @lo=@l.sort
     end
         
 end

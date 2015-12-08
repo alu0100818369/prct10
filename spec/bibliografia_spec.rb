@@ -311,6 +311,7 @@ describe Cita do
     it "Probando el orden de entrada" do
         @c.insertar(@b)
         @c.insertar(@b1)
-        expect(@c.nombre(@c.l.min)).to eq("Arleo, A., Acosta, J.")
+        expect(@c.nombre(@c.lo[0])).to eq("Arleo, A., Acosta, J.")
+        expect(@c.nombre(@c.lo[1])).to eq("Glez, A., Acosta, J.")
     end
 end
