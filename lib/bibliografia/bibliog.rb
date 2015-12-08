@@ -19,7 +19,11 @@ class Bibliog
         if(@apellidos!=other.apellidos)
             @apellidos <=> other.apellidos
         else
-            @anno<=>other.anno
+            if(@anno!=other.anno)
+                @anno<=>other.anno
+            else
+               @titulo<=>other.titulo
+            end
         end
     end
     

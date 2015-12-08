@@ -97,7 +97,7 @@ describe Bibliog do
             expect(@b4==@b3).to eq(true)
         end
         it "Comparando mayor y menor" do
-            expect(@b1<@b3).to eq(false)
+            expect(@b1<@b3).to eq(true)
             expect(@b1>@b3).to eq(false)
         end
     end
