@@ -300,10 +300,11 @@ describe Electronica do
 end
 
 describe Cita do
-    before :all do
+    before :each do
         @c = Cita.new
         @b = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
         @b1 = Bibliog.new(['Ana', 'Juan'], ['Arleo', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
+        @b2 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
     end
     it "Probando nombre--Apellido, N" do
         expect(@c.nombre(@b)).to eq("Glez, A., Acosta, J.")
@@ -313,5 +314,11 @@ describe Cita do
         @c.insertar(@b1)
         expect(@c.nombre(@c.lo[0])).to eq("Arleo, A., Acosta, J.")
         expect(@c.nombre(@c.lo[1])).to eq("Glez, A., Acosta, J.")
+    end
+    it "probar que ordene por fecha de publicacion cuando el autor es el mismo" do
+        @c.insertar(@b)
+        @c.insertar(@b1)
+        @c.insertar(@b2)
+        expect(@c.lo[1].anno).to eq(2011)
     end
 end
