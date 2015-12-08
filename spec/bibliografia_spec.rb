@@ -306,6 +306,7 @@ describe Cita do
         @b1 = Bibliog.new(['Ana', 'Juan'], ['Arleo', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
         @b2 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
         @b3 = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
+        @b4 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida 2', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
     end
     it "Probando nombre--Apellido, N" do
         expect(@c.nombre(@b)).to eq("Glez, A., Acosta, J.")
@@ -326,5 +327,10 @@ describe Cita do
        @c.insertar(@b)
        @c.insertar(@b3)
        expect(@c.nombre(@c.lo[0])).to eq("Glez, A.")
+    end
+    it "mismos autores y mismo año de publicacion" do
+       @c.insertar(@b4)
+       @c.insertar(@b2)
+       expect(@c.lo[0].titulo).to eq("Nueva vida")
     end
 end
