@@ -1,9 +1,10 @@
 class Bibliog
-    attr_reader :autores, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn
+    attr_reader :autores, :titulo, :serie, :editorial, :edicion, :mes, :anno, :isbn, :apellidos
     include Comparable
     
-    def initialize(a, t, e, ed, mes, anno, isbn, s="none")
+    def initialize(a, ap, t, e, ed, mes, anno, isbn, s="none")
         @autores = a
+        @apellidos = ap
         @titulo = t
         @serie = s
         @editorial = e
@@ -26,11 +27,13 @@ class Bibliog
     def get_autores
         size = @autores.length
         i = 0
+        j = 0
         while i < (size-1)
-            cadena = "#{cadena}"+"#{@autores[i]}, "
+            cadena = "#{cadena}"+"#{@autores[i]} #{@apellidos[i]}, "
             i = i+1
+            j = j+1
         end
-        cadena = "#{cadena}"+"#{@autores[i]}"
+        cadena = "#{cadena}"+"#{@autores[i]} #{@apellidos[i]}"
     end
     
     def get_titulo
@@ -91,22 +94,22 @@ end
 
 
 class Libro < Bibliog
-    def initialize(a, t, e, ed, mes, anno, isbn, r, s="none")
-        super(a, t, e, ed,mes, anno, isbn, s)
+    def initialize(a, ap, t, e, ed, mes, anno, isbn, r, s="none")
+        super(a, ap, t, e, ed,mes, anno, isbn, s)
         @resumen = r
     end
 end
 
 class Revista < Bibliog
-    def initialize(a, t, e, ed, mes, anno, isbn, n, s="none")
-        super(a, t, e, ed,mes, anno, isbn, s)
+    def initialize(a, ap, t, e, ed, mes, anno, isbn, n, s="none")
+        super(a, ap, t, e, ed,mes, anno, isbn, s)
         @nom_revista = n
     end
 end
 
 class Electronica < Bibliog
-    def initialize(a, t, e, ed, mes, anno, isbn, u, s="none")
-        super(a, t, e, ed,mes, anno, isbn, s)
+    def initialize(a, ap, t, e, ed, mes, anno, isbn, u, s="none")
+        super(a, ap, t, e, ed,mes, anno, isbn, s)
         @url = u
     end
 end
