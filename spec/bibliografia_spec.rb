@@ -305,6 +305,7 @@ describe Cita do
         @b = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
         @b1 = Bibliog.new(['Ana', 'Juan'], ['Arleo', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
         @b2 = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
+        @b3 = Bibliog.new(['Ana'], ['Glez'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2011, ['1449325866', '9781449325862'], 'Salud')
     end
     it "Probando nombre--Apellido, N" do
         expect(@c.nombre(@b)).to eq("Glez, A., Acosta, J.")
@@ -320,5 +321,10 @@ describe Cita do
         @c.insertar(@b1)
         @c.insertar(@b2)
         expect(@c.lo[1].anno).to eq(2011)
+    end
+    it "si un autor aparece solo y el primero de un grupo que ponga primero el que sale solo" do
+       @c.insertar(@b)
+       @c.insertar(@b3)
+       expect(@c.nombre(@c.lo[0])).to eq("Glez, A.")
     end
 end
