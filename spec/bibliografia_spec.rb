@@ -98,7 +98,7 @@ describe Bibliog do
         end
         it "Comparando mayor y menor" do
             expect(@b1<@b3).to eq(false)
-            expect(@b1>@b3).to eq(true)
+            expect(@b1>@b3).to eq(false)
         end
     end
 end
@@ -181,7 +181,7 @@ describe Lista do
                  @l2.insertar(@b4)
                 @l2.insertar(@b5)
                 expect(@l2.min).to eq(@b2)
-                expect(@l2.max).to eq(@b4)
+                expect(@l2.max).to eq(@b1)
             end
         end
     end
@@ -256,7 +256,7 @@ describe Revista do
     it "Comprobar igualdad" do
         expect(@rev==@rev2).to eq(false)
         expect(@rev==@rev3).to eq(true)
-        expect(@rev>@rev2).to eq(true)
+        expect(@rev>@rev2).to eq(false)
     end
 end
 
@@ -304,7 +304,6 @@ describe Cita do
         @c = Cita.new
         @b = Bibliog.new(['Ana', 'Juan'], ['Glez', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
         @b1 = Bibliog.new(['Ana', 'Juan'], ['Arleo', 'Acosta'], 'Nueva vida', 'Dell', 3, 'Junio 8', 2012, ['1449325866', '9781449325862'], 'Salud')
-        @l = Lista.new
     end
     it "Probando nombre--Apellido, N" do
         expect(@c.nombre(@b)).to eq("Glez, A., Acosta, J.")
@@ -312,6 +311,6 @@ describe Cita do
     it "Probando el orden de entrada" do
         @c.insertar(@b)
         @c.insertar(@b1)
-        expect(@c[1].nombre).to eq("Arleo, A., Acosta, J.")
+        expect(@c.nombre(@c.l.min)).to eq("Arleo, A., Acosta, J.")
     end
 end
