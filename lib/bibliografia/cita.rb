@@ -25,7 +25,7 @@ class Cita
         @lo=@l.sort
     end
     
-    def mostrar
+    def mostrar 
         size = @lo.length
         i=0
         while(i<size)
